@@ -1,0 +1,63 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "description": "Base resource object.",
+                    "properties": {
+                        "id": {
+                            "description": "URI of the resource.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "location": {
+                            "description": "The region where the resource is located.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Name of the resource.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "tags": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "description": "List of key-value pairs.",
+                            "type": "object"
+                        },
+                        "type": {
+                            "description": "Type of resource.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "type": "object",
+                    "x-ms-azure-resource": true
+                }
+            ],
+            "description": "Place holder for fabric location.",
+            "properties": {
+                "properties": {
+                    "description": "Empty object.",
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string",
+            "default": "2016-05-01"
+        }
+    }
+}
